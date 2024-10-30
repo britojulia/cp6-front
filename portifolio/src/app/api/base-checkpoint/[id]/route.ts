@@ -53,11 +53,11 @@ export async function DELETE(request:Request, {params}:{params:{id:number}}) {
             await fs.writeFile(process.cwd() + '/src/data/banco.json', listaJson);
 
             //Criando uma resposta adequada para quem chamou:
-            return NextResponse.json({msg:"Produto excluído com sucesso!"});
+            return NextResponse.json({msg:"Checkpoint excluído com sucesso!"});
         }
 
     } catch (error) {
-        return NextResponse.json({msg:"Falha na exclusão do produto : "+error},{status:500})
+        return NextResponse.json({msg:"Falha na exclusão do Checkpoint : "+error},{status:500})
     }
 
 }
