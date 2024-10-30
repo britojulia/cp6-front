@@ -19,23 +19,23 @@ export default function CadGlobalSolution() {
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
         const{name,value} = e.target;
         // setProduto((preV) => ({...preV, [name]:value}));
-        setChekpoint({...checkpoint, [name]:value});
+        setGlobal({...global, [name]:value});
     }
 
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
         try {
-            const  response = await fetch('http://localhost:3000/api/base-checkpoint', {
+            const  response = await fetch('http://localhost:3000/api/base-global', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     },
-                body: JSON.stringify(checkpoint),
+                body: JSON.stringify(global),
                 });
 
                 if (response.ok) {
-                    alert("Checkpoint cadastrado com sucesso.");
-                    setChekpoint({
+                    alert("Global Solution cadastrada com sucesso.");
+                    setGlobal({
                         id: 0,
                         aluno:"",
                         materia:"",
@@ -43,39 +43,39 @@ export default function CadGlobalSolution() {
                         data: "",
                         feedback:"",
                     });
-                    navigate.push('/checkpoint');
+                    navigate.push('/global-solution');
                 }
         } catch (error) {
-            console.error("Falha ao cadastrar checkpoint: ", error);
+            console.error("Falha ao cadastrar global solution: ", error);
         }
     }
 
     return (
         <div>
-            <h1>CheckPoints</h1>
+            <h1>Global Solutions</h1>
             <div>
-            <label htmlFor="idProduto"> Checkpoint </label>
+            <label htmlFor="idProduto"> Global Solution </label>
                 <form onSubmit={handleSubmit}>
-                    <h2>Adicionar CPS</h2>
+                    <h2>Adicionar GS</h2>
                     <div>
                         <label>NOME DO ALUNO</label>
-                        <input type="text" name="aluno" value={checkpoint.aluno} onChange={(evento)=>handleChange(evento)} placeholder="digite o nome do aluno" required/>
+                        <input type="text" name="aluno" value={global.aluno} onChange={(evento)=>handleChange(evento)} placeholder="digite o nome do aluno" required/>
                     </div>
                     <div>
                         <label>NOME DA AVALIAÇÃO</label>
-                        <input type="text" name="materia" value={checkpoint.materia} onChange={(evento)=>handleChange(evento)} placeholder="digite a matéria da avaliação" required/>
+                        <input type="text" name="materia" value={global.materia} onChange={(evento)=>handleChange(evento)} placeholder="digite a matéria da avaliação" required/>
                     </div>
                     <div>
                         <label>NOTA</label>
-                        <input type="number" name="nota" value={checkpoint.nota} onChange={(evento)=>handleChange(evento)} placeholder="digite a nota da avaliação"/>
+                        <input type="number" name="nota" value={global.nota} onChange={(evento)=>handleChange(evento)} placeholder="digite a nota da avaliação"/>
                     </div>
                     <div>
                         <label>DATA</label>
-                        <input type="date" name="data" value={checkpoint.data} onChange={(evento)=>handleChange(evento)} required/>
+                        <input type="date" name="data" value={global.data} onChange={(evento)=>handleChange(evento)} required/>
                     </div>
                     <div>
                         <label>FEEDBACK</label>
-                        <input type="text" name="feedback" value={checkpoint.feedback} onChange={(evento)=>handleChange(evento)} placeholder="digite o feedback da avaliação"/>
+                        <input type="text" name="feedback" value={global.feedback} onChange={(evento)=>handleChange(evento)} placeholder="digite o feedback da avaliação"/>
                     </div>
                     <div>
                         <button type="submit">CADASTRAR</button>
