@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Menu from "./components/Menu/Menu";
+import { FaGithub } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
               <p className="text-sm text-center">
                 Análise e Desenvolvimento de Sistemas
               </p>
-              <Link href="/">Repositório</Link>
+              <Link href="/"><FaGithub/></Link>
             </div>
           ))}
         </div>

@@ -1,14 +1,23 @@
-import Link from "next/link";
+import DashboardCard from "../Dashboard/Dashboard";
+import { MdClass } from "react-icons/md";
 
 export default function Menu() {
     return (
-        <nav>
-            <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/produtos">Checkpoint</Link></li>
-                <li><Link href="/produtos">Global Solutions</Link></li>
-                <li><Link href="/produtos">Challenge</Link></li>
-            </ul>
-        </nav>
+        <div>
+            <div>
+                <DashboardCard
+                title={"Checkpoints realizados"} 
+                count={0} 
+                icon={<MdClass />}/>
+                <DashboardCard
+                title={"Global Solutions"} 
+                count={0} 
+                icon={<MdClass />}/>
+                <DashboardCard
+                title={"Challenge"} 
+                count={0} 
+                icon={<MdClass />}/>
+            </div>
+        </div>
     )
 }
