@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GrEdit as Editar } from "react-icons/gr";
 import { RiDeleteBin2Line as Excluir } from "react-icons/ri";
+import Image from "next/image";
+import LogoFiap from "@/image/fiap-global.jpg"
+
 
 export default function Global() {
 
@@ -38,8 +41,9 @@ const handleDelete = async (id:number)=>{
     return (
         <div>
             <div>
+            <Image src={LogoFiap} alt="Logo fiap"/>
             <h2>Global Solution</h2>
-            <h3>avaliações </h3>
+            <h3>Projetos ou avaliações integradoras, que envolvem a aplicação global dos conhecimentos adiquiridos </h3>
             <div>
                 <nav>
                     <ul>

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Menu from "./components/Menu/Menu";
 import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
+import LogoFiap from "@/image/fiap-ads.png"
 
 export default function Home() {
   return (
@@ -17,16 +18,11 @@ export default function Home() {
               <div className="mb-4">
               </div>
               <h2 className="text-lg font-bold text-center">{name.toUpperCase()}</h2>
-              <p className="text-sm text-center">
-                Análise e Desenvolvimento de Sistemas
-              </p>
               <Link href="/"><FaGithub/></Link>
+              <Image src={LogoFiap} alt="logo fiap"/>
             </div>
           ))}
         </div>
-      </div>
-      <div>
-        <Menu/>
       </div>
     </div>
   );

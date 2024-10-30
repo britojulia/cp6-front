@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { GrEdit as Editar } from "react-icons/gr";
 import { RiDeleteBin2Line as Excluir } from "react-icons/ri";
+import Image from "next/image";
+import LogoFiap from "@/image/fiap-cp.jpg"
 
 export default function Checkpoints() {
 
@@ -38,8 +40,9 @@ const handleDelete = async (id:number)=>{
     return (
         <div>
             <div>
+            <Image src={LogoFiap} alt="Logo fiap"/>
             <h2>Checkpoints</h2>
-            <h3>avaliações </h3>
+            <h3>Avaliações intermediárias para acompanhamento do progresso </h3>
             <div>
                 <nav>
                     <ul>
