@@ -11,7 +11,7 @@ export default function Checkpoints() {
     const [checkpoints, setCheckpoints] = useState<Checkpoint[]>([]);
     
     const chamadaApi = async ()=>{
-        const response = await fetch("http://localhost:3001/api/base-checkpoint");
+        const response = await fetch("http://localhost:3000/api/base-checkpoint");
         const data = await response.json();
         
         setCheckpoints(data);
@@ -23,7 +23,7 @@ export default function Checkpoints() {
 
 const handleDelete = async (id:number)=>{
     try {
-        const response = await fetch(`http://localhost:3001/api/base-checkpoint/${id}`,{
+        const response = await fetch(`http://localhost:3000/api/base-checkpoint/${id}`,{
             method: 'DELETE',
         });
         if (response.ok) {
