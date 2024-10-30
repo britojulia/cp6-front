@@ -25,7 +25,7 @@ export default function CadCheckpoint() {
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
         try {
-            const  response = await fetch('http://localhost:3000/api/base-checkpoint', {
+            const  response = await fetch('http://localhost:3001/api/base-checkpoint', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export default function CadCheckpoint() {
                     <h2>Adicionar CPS</h2>
                     <div>
                         <label>NOME DO ALUNO</label>
-                        <input type="text" name="nome" value={checkpoint.aluno} onChange={(evento)=>handleChange(evento)} placeholder="digite nome do aluno" required/>
+                        <input type="text" name="aluno" value={checkpoint.aluno} onChange={(evento)=>handleChange(evento)} placeholder="digite o nome do aluno" required/>
                     </div>
                     <div>
                         <label>NOME DA AVALIAÇÃO</label>
@@ -81,9 +81,6 @@ export default function CadCheckpoint() {
                         <button type="submit">CADASTRAR</button>
                     </div>
                 </form>
-            </div>
-            <div>
-                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cadastrar</button>
             </div>
         </div>
     )

@@ -37,8 +37,17 @@ const handleDelete = async (id:number)=>{
 
     return (
         <div>
+            <div>
             <h2>Checkpoints</h2>
             <h3>avaliações </h3>
+            <div>
+                <nav>
+                    <ul>
+                        <li><Link href="/checkpoint/cad-checkpoint">Cadastrar novo CP</Link></li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
 
             <table className="tabelaProd">
                 <thead>
