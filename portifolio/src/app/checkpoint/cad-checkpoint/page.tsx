@@ -25,7 +25,7 @@ export default function CadCheckpoint() {
     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
         try {
-            const  response = await fetch('http://localhost:3001/api/base-checkpoint', {
+            const  response = await fetch('http://localhost:3000/api/base-checkpoint', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

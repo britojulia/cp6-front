@@ -23,7 +23,7 @@ export default function EditarCheckpoint() {
 
     useEffect(() => {
         const chamadaApi = async () => {
-            const response = await fetch(`http://localhost:3001/api/base-checkpoint/${id}`);
+            const response = await fetch(`http://localhost:3000/api/base-checkpoint/${id}`);
             const data = await response.json();
             setCheckpoint(data);
         };
@@ -36,7 +36,7 @@ export default function EditarCheckpoint() {
         e.preventDefault();
 
         try {
-            const response = await fetch(`http://localhost:3001/api/base-checkpoint/${id}`, {
+            const response = await fetch(`http://localhost:3000/api/base-checkpoint/${id}`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": "application/json"
