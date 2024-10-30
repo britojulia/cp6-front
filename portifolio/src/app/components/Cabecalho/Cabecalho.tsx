@@ -10,7 +10,7 @@ export default function Cabecalho() {
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/checkpoint">Checkpoint</Link></li>
                         <li><Link href="/global-solution">Global Solutions</Link></li>
-                        <li><Link href="/produtos">Challenge</Link></li>
+                        <li><Link href="/challange">Challenge</Link></li>
                     </ul>
                 </nav>
             </div>
