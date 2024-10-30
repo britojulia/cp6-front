@@ -34,7 +34,7 @@ export default function CadCheckpoint() {
                 });
 
                 if (response.ok) {
-                    alert("Checkpointcadastrado com sucesso.");
+                    alert("Checkpoint cadastrado com sucesso.");
                     setChekpoint({
                         id: 0,
                         aluno:"",
