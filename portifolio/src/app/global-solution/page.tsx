@@ -8,13 +8,13 @@ import { RiDeleteBin2Line as Excluir } from "react-icons/ri";
 
 export default function Global() {
 
-    const [global, setGlobal] = useState<GlobalSolution[]>([]);
+    const [globals, setGlobals] = useState<GlobalSolution[]>([]);
     
     const chamadaApi = async ()=>{
-        const response = await fetch("http://localhost:3000/api/base-checkpoint");
+        const response = await fetch("http://localhost:3000/api/base-global");
         const data = await response.json();
         
-        setGlobal(data);
+        setGlobals(data);
     }
 
     useEffect(() => {
@@ -78,7 +78,7 @@ const handleDelete = async (id:number)=>{
                 <tfoot>
                     <tr>
                         <td colSpan={5}>
-                            Quantidade de checkpoints já realizadas : {globals.length}
+                            Quantidade de global já realizadas : {globals.length}
                         </td>
                     </tr>
                 </tfoot>

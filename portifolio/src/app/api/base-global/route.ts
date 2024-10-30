@@ -9,7 +9,7 @@ export async function GET() {
     //Criar um try-catch para tratar as possíves exceções que podem ocorrer.
     try {
         //Recuperando a lista que está no arquivo banco.json e colocando na constante file.
-        const file = await fs.readFile(process.cwd() + '/src/data/banco.json', 'utf-8');
+        const file = await fs.readFile(process.cwd() + '/src/data/banco-gs.json', 'utf-8');
 
         //Convertendo o conteúdo do arquivo file que está em formato string em um objeto JSON.
         //Obs estamos recuperando uma lista e não um único objeto, por isso é necessário a tipagem correta.
@@ -29,8 +29,8 @@ export async function POST(request: Request) {
 
     try {
 
-        //Recuperando a lista que está no arquivo banco.json e colocando na constante file.
-        const file = await fs.readFile(process.cwd() + '/src/data/banco.json', 'utf-8');
+        //Recuperando a lista que está no arquivo banco-gs.json e colocando na constante file.
+        const file = await fs.readFile(process.cwd() + '/src/data/banco-gs.json', 'utf-8');
 
         //Convertendo o conteúdo do arquivo file que está em formato string em um objeto JSON.
         //Obs estamos recuperando uma lista e não um único objeto, por isso é necessário a tipagem correta.
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
         const listaJson = JSON.stringify(globals);
 
         //Finalmente adicionamos a lista no arquivo com os dados novos, sobrepondo os antigos.
-        await fs.writeFile(process.cwd() + '/src/data/banco.json', listaJson);
+        await fs.writeFile(process.cwd() + '/src/data/banco-gs.json', listaJson);
 
         //Criando uma resposta adequada para quem chamou:
         return NextResponse.json(checkpoint, { status: 201 });

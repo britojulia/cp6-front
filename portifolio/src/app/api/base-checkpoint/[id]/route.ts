@@ -8,7 +8,7 @@ export async function GET(request:Request, {params}:{params:{id:number}}) {
     //Criar um try-catch para tratar as possíves exceções que podem ocorrer.
     try {
         //Recuperando a lista que está no arquivo banco.json e colocando na constante file.
-        const file = await fs.readFile( process.cwd() + '/src/data/banco.json', 'utf-8');
+        const file = await fs.readFile( process.cwd() + '/src/data/banco-cp.json', 'utf-8');
         
         //Convertendo o conteúdo do arquivo file que está em formato string em um objeto JSON.
         //Obs estamos recuperando uma lista e não um único objeto, por isso é necessário a tipagem correta.
@@ -32,7 +32,7 @@ export async function DELETE(request:Request, {params}:{params:{id:number}}) {
     //Criar um try-catch para tratar as possíves exceções que podem ocorrer.
     try {
         //Recuperando a lista que está no arquivo banco.json e colocando na constante file.
-        const file = await fs.readFile( process.cwd() + '/src/data/banco.json', 'utf-8');
+        const file = await fs.readFile( process.cwd() + '/src/data/banco-cp.json', 'utf-8');
         
         //Convertendo o conteúdo do arquivo file que está em formato string em um objeto JSON.
         //Obs estamos recuperando uma lista e não um único objeto, por isso é necessário a tipagem correta.
@@ -50,7 +50,7 @@ export async function DELETE(request:Request, {params}:{params:{id:number}}) {
             const listaJson = JSON.stringify(checkpoints);
 
             //Finalmente adicionamos a lista no arquivo com os dados novos, sobrepondo os antigos.
-            await fs.writeFile(process.cwd() + '/src/data/banco.json', listaJson);
+            await fs.writeFile(process.cwd() + '/src/data/banco-cp.json', listaJson);
 
             //Criando uma resposta adequada para quem chamou:
             return NextResponse.json({msg:"Checkpoint excluído com sucesso!"});
@@ -69,7 +69,7 @@ export async function PUT(request: Request,{params}:{params:{id:number}}) {
     try {
 
         //Recuperando a lista que está no arquivo banco.json e colocando na constante file.
-        const file = await fs.readFile(process.cwd() + '/src/data/banco.json', 'utf-8');
+        const file = await fs.readFile(process.cwd() + '/src/data/banco-cp.json', 'utf-8');
 
         //Convertendo o conteúdo do arquivo file que está em formato string em um objeto JSON.
         //Obs estamos recuperando uma lista e não um único objeto, por isso é necessário a tipagem correta.
@@ -97,7 +97,7 @@ export async function PUT(request: Request,{params}:{params:{id:number}}) {
             const listaJson = JSON.stringify(checkpoints);
 
             //Finalmente adicionamos a lista no arquivo com os dados novos, sobrepondo os antigos.
-            await fs.writeFile(process.cwd() + '/src/data/banco.json', listaJson);
+            await fs.writeFile(process.cwd() + '/src/data/banco-cp.json', listaJson);
 
             //Criando uma resposta adequada para quem chamou:
             return NextResponse.json({msg:"Checkpoint atualizado com sucesso!"});
