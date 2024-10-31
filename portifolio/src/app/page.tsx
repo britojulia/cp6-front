@@ -16,10 +16,10 @@ export default function Home() {
               className="bg-gray-900 text-white p-6 rounded-lg shadow-lg flex flex-col items-center transition transform hover:scale-105"
             >
               <div className="mb-4">
-                <Image src={LogoFiap} alt="logo fiap" width={96} height={96} className="w-24 h-auto" />
+                <Image src={LogoFiap} alt="logo fiap" width={120} height={120} className="w-24 h-auto" />
               </div>
               <h2 className="text-lg font-bold text-center">{name.toUpperCase()}</h2>
-              <Link href="/" className="mt-2 inline-block text-pink-500 hover:text-pink-600 transition">
+              <Link href="https://github.com/britojulia/cp6-front" className="mt-2 inline-block text-pink-500 hover:text-pink-600 transition">
                 <FaGithub className="text-2xl" />
               </Link>
             </div>
