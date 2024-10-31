@@ -39,15 +39,15 @@ export default function Global() {
     return (
         <div className="bg-black min-h-screen p-5">
             <div className="max-w-6xl mx-auto">
-                {/* Ajustando a largura e centralizando a imagem */}
+                {/* Centralizando a imagem */}
                 <div className="flex justify-center mb-4">
-                    <Image src={LogoFiap} alt="Logo fiap" className="w-56 h-auto" /> {/* Tamanho aumentado */}
+                    <Image src={LogoFiap} alt="Logo fiap" className="w-56 h-auto" />
                 </div>
-                <h2 className="text-4xl font-bold text-white mb-2">Global Solution</h2>
-                <h3 className="text-2xl text-white mb-4">
+                <h2 className="text-4xl font-bold text-white mb-2 text-center">Global Solution</h2>
+                <h3 className="text-2xl text-white mb-4 text-center">
                     Projetos ou avaliações integradoras, que envolvem a aplicação global dos conhecimentos adquiridos
                 </h3>
-                <div className="mb-6">
+                <div className="mb-6 flex justify-center">
                     <nav>
                         <ul>
                             <li>
@@ -80,7 +80,7 @@ export default function Global() {
                                 <td className="py-2 px-4">{p.nota}</td>
                                 <td className="py-2 px-4">{p.data}</td>
                                 <td className="py-2 px-4">{p.feedback}</td>
-                                <td className="py-2 px-4 flex items-center">
+                                <td className="py-2 px-4 flex justify-center items-center">
                                     <Link href={`/global-solution/${p.id}`} className="text-pink-500 hover:text-pink-600 transition mr-2">
                                         <Editar className="inline text-3xl" />
                                     </Link>

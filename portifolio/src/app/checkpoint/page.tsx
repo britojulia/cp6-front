@@ -37,12 +37,14 @@ export default function Checkpoints() {
     };
 
     return (
-        <div className="bg-black min-h-screen p-5">
-            <div className="max-w-6xl mx-auto">
-                <Image src={LogoFiap} alt="Logo fiap" className="mb-5" />
-                <h2 className="text-4xl font-bold text-white mb-2">Checkpoints</h2>
-                <h3 className="text-2xl text-white mb-4">Avaliações intermediárias para acompanhamento do progresso</h3>
-                <div className="mb-6">
+        <div className="bg-black min-h-screen p-5 flex flex-col items-center">
+            <div className="max-w-6xl w-full">
+                <div className="flex justify-center mb-5">
+                    <Image src={LogoFiap} alt="Logo fiap" className="w-48 h-auto" /> {/* Diminuindo a largura da imagem */}
+                </div>
+                <h2 className="text-4xl font-bold text-white mb-2 text-center">Checkpoints</h2>
+                <h3 className="text-2xl text-white mb-4 text-center">Avaliações intermediárias para acompanhamento do progresso</h3>
+                <div className="mb-6 text-center">
                     <nav>
                         <ul>
                             <li>
@@ -78,7 +80,7 @@ export default function Checkpoints() {
                                 <td className="py-2 px-4 flex items-center">
                                     <Link href={`/checkpoint/${p.id}`} className="text-pink-500 hover:text-pink-600 transition mr-2">
                                         <Editar className="inline text-3xl" />
-                                    </Link> 
+                                    </Link>
                                     <Link href="#" onClick={() => handleDelete(p.id)} className="text-red-500 hover:text-red-600 transition">
                                         <Excluir className="inline text-3xl" />
                                     </Link>

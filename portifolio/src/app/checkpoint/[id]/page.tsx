@@ -1,15 +1,12 @@
 "use client";
 
-
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; 
-import { useParams } from "next/navigation"; 
-import { Checkpoint } from "@/types/checkpoint"; // Assegure-se de que o caminho esteja correto
-import React from "react";
+import { useRouter, useParams } from "next/navigation"; 
+import { Checkpoint } from "@/types/checkpoint"; // Certifique-se de que o caminho esteja correto
 
 export default function EditarCheckpoint() {
     const navigate = useRouter();
-    const params = useParams(); // Obtenha os parâmetros usando useParams
+    const params = useParams();
     const id = params.id;
 
     const [checkpoint, setCheckpoint] = useState<Checkpoint>({
@@ -62,37 +59,78 @@ export default function EditarCheckpoint() {
         }
     }
 
-return (
-    <div>
-        <h1>Editar CheckPoints</h1>
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="idCheckpoint"> Checkpoint </label>
-                    <label>NOME DO ALUNO</label>
-                    <input type="text" name="nome" value={checkpoint.aluno} onChange={(evento) => setCheckpoint({ ...checkpoint, aluno: evento.target.value })} />
-                </div>
-                <div>
-                    <label>NOME DA AVALIAÇÃO</label>
-                    <input type="text" name="materia" value={checkpoint.materia} onChange={(evento) => setCheckpoint({ ...checkpoint, materia: evento.target.value })} />
-                </div>
-                <div>
-                    <label>NOTA</label>
-                    <input type="number" name="nota" value={checkpoint.nota} onChange={(evento) => setCheckpoint({ ...checkpoint, nota: parseFloat(evento.target.value) })} />
-                </div>
-                <div>
-                    <label>DATA</label>
-                    <input type="date" name="data" value={checkpoint.data} onChange={(evento) => setCheckpoint({ ...checkpoint, data: evento.target.value })} />
-                </div>
-                <div>
-                    <label>FEEDBACK</label>
-                    <input type="text" name="feedback" value={checkpoint.feedback} onChange={(evento) => setCheckpoint({ ...checkpoint, feedback: evento.target.value })} />
-                </div>
-                <div>
-                    <button type="submit">Atualizar</button>
-                </div>
-            </form>
+    return (
+        <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center py-10 px-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-pink-400 mb-6">Editar CheckPoints</h1>
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-lg">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                        <label className="block text-sm font-medium mb-1">NOME DO ALUNO</label>
+                        <input
+                            type="text"
+                            name="aluno"
+                            value={checkpoint.aluno}
+                            onChange={(evento) => setCheckpoint({ ...checkpoint, aluno: evento.target.value })}
+                            placeholder="Digite o nome do aluno"
+                            required
+                            className="w-full px-4 py-2 rounded-md bg-gray-700 text-white placeholder-gray-400"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-1">NOME DA AVALIAÇÃO</label>
+                        <input
+                            type="text"
+                            name="materia"
+                            value={checkpoint.materia}
+                            onChange={(evento) => setCheckpoint({ ...checkpoint, materia: evento.target.value })}
+                            placeholder="Digite a matéria da avaliação"
+                            required
+                            className="w-full px-4 py-2 rounded-md bg-gray-700 text-white placeholder-gray-400"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-1">NOTA</label>
+                        <input
+                            type="number"
+                            name="nota"
+                            value={checkpoint.nota}
+                            onChange={(evento) => setCheckpoint({ ...checkpoint, nota: parseFloat(evento.target.value) })}
+                            placeholder="Digite a nota da avaliação"
+                            className="w-full px-4 py-2 rounded-md bg-gray-700 text-white placeholder-gray-400"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-1">DATA</label>
+                        <input
+                            type="date"
+                            name="data"
+                            value={checkpoint.data}
+                            onChange={(evento) => setCheckpoint({ ...checkpoint, data: evento.target.value })}
+                            required
+                            className="w-full px-4 py-2 rounded-md bg-gray-700 text-white"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-1">FEEDBACK</label>
+                        <input
+                            type="text"
+                            name="feedback"
+                            value={checkpoint.feedback}
+                            onChange={(evento) => setCheckpoint({ ...checkpoint, feedback: evento.target.value })}
+                            placeholder="Digite o feedback da avaliação"
+                            className="w-full px-4 py-2 rounded-md bg-gray-700 text-white placeholder-gray-400"
+                        />
+                    </div>
+                    <div>
+                        <button
+                            type="submit"
+                            className="w-full bg-pink-500 text-white py-2 rounded-md hover:bg-pink-600 transition font-semibold"
+                        >
+                            Atualizar
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-);
+    );
 }
