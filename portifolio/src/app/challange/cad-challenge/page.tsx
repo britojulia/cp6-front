@@ -24,7 +24,7 @@ export default function CadChallenge() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/base-challenge', {
+            const response = await fetch('http://localhost:3000/api/base-challange', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export default function CadChallenge() {
                     data: "",
                     feedback: "",
                 });
-                navigate.push('/challenge');
+                navigate.push('/challange');
             }
         } catch (error) {
             console.error("Falha ao cadastrar challenge: ", error);

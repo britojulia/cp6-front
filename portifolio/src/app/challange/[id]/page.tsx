@@ -21,7 +21,7 @@ export default function EditarChallenge() {
 
     useEffect(() => {
         const chamadaApi = async () => {
-            const response = await fetch(`http://localhost:3000/api/base-challenge/${id}`);
+            const response = await fetch(`http://localhost:3000/api/base-challange/${id}`);
             const data = await response.json();
             setChallenge(data);
         };
@@ -34,7 +34,7 @@ export default function EditarChallenge() {
         e.preventDefault();
 
         try {
-            const response = await fetch(`http://localhost:3000/api/base-challenge/${id}`, {
+            const response = await fetch(`http://localhost:3000/api/base-challange/${id}`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": "application/json"
@@ -52,7 +52,7 @@ export default function EditarChallenge() {
                     data: "",
                     feedback: "",
                 });
-                navigate.push("/challenge");
+                navigate.push("/challange");
             }
 
         } catch (error) {

@@ -40,7 +40,7 @@ export default function Challenges() {
         <div className="bg-black min-h-screen p-5 flex flex-col items-center">
             <div className="max-w-6xl w-full">
                 <div className="flex justify-center mb-5">
-                    <Image src={LogoFiap} alt="Logo fiap" className="w-48 h-auto" /> {/* Diminuindo a largura da imagem */}
+                    <Image src={LogoFiap} alt="Logo fiap" className="w-48 h-auto" /> 
                 </div>
                 <h2 className="text-4xl font-bold text-white mb-2 text-center">Challenges</h2>
                 <h3 className="text-2xl text-white mb-4 text-center">Avaliações em formato de desafio, com foco em resolução de problemas com entregas programadas.</h3>
@@ -78,7 +78,7 @@ export default function Challenges() {
                                 <td className="py-2 px-4">{p.data}</td>
                                 <td className="py-2 px-4">{p.feedback}</td>
                                 <td className="py-2 px-4 flex items-center justify-center">
-                                    <Link href={`/challenge/${p.id}`} className="text-pink-500 hover:text-pink-600 transition mr-2">
+                                    <Link href={`/challange/${p.id}`} className="text-pink-500 hover:text-pink-600 transition mr-2">
                                         <Editar className="inline text-3xl" />
                                     </Link> 
                                     <Link href="#" onClick={() => handleDelete(p.id)} className="text-red-500 hover:text-red-600 transition">
