@@ -78,7 +78,7 @@ export default function Challenges() {
                                 <td className="py-2 px-4">{p.data}</td>
                                 <td className="py-2 px-4">{p.feedback}</td>
                                 <td className="py-2 px-4 flex items-center justify-center">
-                                    <Link href={`/challange/${p.id}`} className="text-pink-500 hover:text-pink-600 transition mr-2">
+                                    <Link href={`/challnge/${p.id}`} className="text-pink-500 hover:text-pink-600 transition mr-2">
                                         <Editar className="inline text-3xl" />
                                     </Link> 
                                     <Link href="#" onClick={() => handleDelete(p.id)} className="text-red-500 hover:text-red-600 transition">
